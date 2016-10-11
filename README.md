@@ -6,16 +6,24 @@ The rules of the game are simple. The circle on the initial square is a marker t
 [4] 8 5 2 3 5 1 6 4 0
 Starting position: Index 0, number = 4.
 
-Step 1: Move right # of index as indicated by current number (in this case, it was 4, we move 4 indexes to the right)
+# Step 1: 
+Move right # of index as indicated by current number (in this case, it was 4, we move 4 indexes to the right)
+
 4 8 5 2 [3] 5 1 6 4 0
 
-Step 2: Keep moving right if it is possible, otherwise move left
+# Step 2: 
+Keep moving right if it is possible, otherwise move left
+
 4 8 5 2 3 5 1 [6] 4 0
 
-Step 3: Move left as it was not possible to move right
+# Step 3:
+Move left as it was not possible to move right
+
 4 [8] 5 2 3 5 1 6 4 0
 
-Step 4: Move right as it was not possible to move left
+# Step 4: 
+Move right as it was not possible to move left
+
 4 8 5 2 3 5 1 6 4 [0]
 
 
