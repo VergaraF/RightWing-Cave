@@ -1,10 +1,13 @@
-
+/*
+ * Author: Fabian Vergara
+ * 
+ */
 public class RightWingGame {
-	
+	public static final int DEFAULT_VALUE = 0;
 	public static void main(String[] args){
 		int[] play = {4, 8, 5, 2, 3, 5, 1, 6, 4, 0};
 		
-		System.out.println(solveGameRecursively(play, 0, 0));
+		System.out.println(solveGameRecursively(play, DEFAULT_VALUE, DEFAULT_VALUE));
 	}
 	
 	public static boolean solveGameRecursively(int[] game, int index, int oldValue){
