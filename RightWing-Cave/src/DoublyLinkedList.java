@@ -1,8 +1,13 @@
 
 public class DoublyLinkedList<T>{
 	
-	public Node first = null;
-	public Node last  = null;
+	public Node first;
+	public Node last;
+	
+	public DoublyLinkedList(){
+		this.first = null;
+		this.last = null;
+	}
 	
 	public void addFirst(T data){
 		Node newNode = new Node(data);
@@ -69,6 +74,19 @@ public class DoublyLinkedList<T>{
 	
 	public boolean isEmpty(){
 		return first == null;
+	}
+	
+	public String toString(){
+		if (isEmpty()){
+			return "It is empty";
+		}
+		Node current = first;
+		String toReturn = "";
+		while (current != null){
+			toReturn += current.data + ", ";
+			current = current.next;
+		}
+		return toReturn;
 	}
 	
 	private static class Node<T>{
