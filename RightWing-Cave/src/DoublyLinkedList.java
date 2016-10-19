@@ -1,4 +1,9 @@
-
+/*
+ *
+ *  Author : Fabian Vergara
+ *  Date   : Wednesday, October 19, 2016
+ * 
+ */
 public class DoublyLinkedList<T>{
 	
 	public Node first;
