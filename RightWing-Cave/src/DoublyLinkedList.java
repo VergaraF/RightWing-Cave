@@ -36,19 +36,19 @@ public class DoublyLinkedList<T>{
 	}
 	
 	public Node moveForward(int index, Node node){
-		Node nodeToReturn = null;
+		//Node nodeToReturn = null;
 		for (int i = 0; i < index; i++){
-			nodeToReturn = node.next;
+			node = node.next;
 		}
-		return nodeToReturn;
+		return node;
 	}
 	
 	public Node moveBackward(int index, Node node){
-		Node nodeToReturn = null;
+		//Node nodeToReturn = null;
 		for (int i = 0; i<index; i++){
-			nodeToReturn = node.prev;
+			node = node.prev;
 		}
-		return nodeToReturn;
+		return node;
 	}
 	
 	public boolean canMoveForward(int index, Node node){
@@ -89,20 +89,20 @@ public class DoublyLinkedList<T>{
 		return toReturn;
 	}
 	
-	private static class Node<T>{
-		private T    data;
-		private Node next;
-		private Node prev;
-		
-		public Node(T data){
-			this.data = data;
-			this.next = null;
-			this.prev = null;
-		}
-		
-		public String toString(){
-			return "Number : " + this.data;
-		}
-	}
+}
 
+class Node<T>{
+	protected T    data;
+	protected Node next;
+	protected Node prev;
+	
+	public Node(T data){
+		this.data = data;
+		this.next = null;
+		this.prev = null;
+	}
+	
+	public String toString(){
+		return "Number : " + this.data;
+	}
 }
