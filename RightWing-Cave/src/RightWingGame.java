@@ -61,7 +61,7 @@ public class RightWingGame {
 			if (current == possibleCycle){
 				return false;
 			}
-		    if (gameToPlay.canMoveForward(current.data, current) && 
+		    if (gameToPlay.canMoveForward(current.data, current)     && 
 		    	gameToPlay.moveForward(current.data, current) != old && 
 		    	current != possibleCycle){
 				System.out.println("Moving forward " + current.data + " spaces.");
