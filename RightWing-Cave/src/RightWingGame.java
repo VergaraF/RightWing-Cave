@@ -35,13 +35,13 @@ public class RightWingGame {
 		
 		//gameToPlay.addLast(1);
 		
-		createGame(play7);
+		createGame(play6);
 		
 		System.out.println(gameToPlay);
 		//System.out.println(gameToPlay.first);
 		System.out.println(solveGameUsingDataStructure());
 		//System.out.println(gameToPlay.moveForward(4, gameToPlay.first));
-		//System.out.println(solveGameRecursively(play, DEFAULT_VALUE, DEFAULT_VALUE, DEFAULT_VALUE));
+		//System.out.println(solveGameRecursively(play6, DEFAULT_VALUE, DEFAULT_VALUE, DEFAULT_VALUE));
 	}
 	
 	public static void createGame(int [] game){
@@ -51,16 +51,28 @@ public class RightWingGame {
 	}
 	
 	public static boolean solveGameUsingDataStructure(){
-		Node<Integer> current = gameToPlay.first;
-		Node<Integer> old = new Node<Integer>(null);
+		Node<Integer> current       = gameToPlay.first;
+		Node<Integer> old           = new Node<Integer>(null);
+		Node<Integer> possibleCycle = new Node<Integer>(null);
+		
 
 		while (current != null && current.data != 0){
 			//System.out.println(current);
-		    if (gameToPlay.canMoveForward(current.data, current) && gameToPlay.moveForward(current.data, current) != old){
+			if (current == possibleCycle){
+				return false;
+			}
+		    if (gameToPlay.canMoveForward(current.data, current) && 
+		    	gameToPlay.moveForward(current.data, current) != old && 
+		    	current != possibleCycle){
 				System.out.println("Moving forward " + current.data + " spaces.");
 				old = current;
 				current = gameToPlay.moveForward(current.data, current);
+				//gameToPlay.canMoveBackward(current.data, current)
+		     
 			}else if (gameToPlay.canMoveBackward(current.data, current)){
+				if ( gameToPlay.moveBackward(current.data, current) == old){
+			    	possibleCycle = current;
+				}
 				System.out.println("Moving backward " + current.data + " spaces.");
 				old = current;
 				current = gameToPlay.moveBackward(current.data, current);
